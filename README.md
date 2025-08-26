@@ -1,3 +1,103 @@
+# Quick Download Guide
+
+| Sets                           | File Name                                  | File Count                       |
+| ------------------------------ | ------------------------------------------ | -------------------------------- |
+| [SuperOTC](SuperOTC) (.ttc)    | SourceHanSans.ttc                          | 1                                |
+| [OTC](OTC) (.ttc)              | SourceHanSans-`weight`.ttc                 | 7 (weight)                       |
+| [OTF](OTF) (.otf)              | SourceHanSans`SC,_,K,HC,TC`-`weight`.otf   | 7 (weight) × 5 (lang) × 2 (HW)   |
+| [Subset OTF](SubsetOTF) (.otf) | SourceHanSans`CN,JP,KR,HK,TW`-`weight`.otf | 7 (weight) × 5 (region)          |
+
+1. All OTCs contain *language-specific* OTF.
+2. `HW` refers to “Half-Width”.
+3. All the font above is OpenType (CFF) based.
+
+## Variable font since v2.003
+
+| VF Sets                                           | File Name                                  | File Count                |
+| ------------------------------------------------- | ------------------------------------------ | ------------------------- |
+| [OTC](Variable/OTC)                               | SourceHanSans-VF.`outline`.ttc             | 2 (outline type) × 2 (HW) |
+| -----------------                                 | ----------                                 | -------                   |
+| [OTF](Variable/OTF)                               | SourceHanSans`SC,_,K,HC,TC`-VF.otf         | 5 (lang)                  |
+| [OTF / Subset](Variable/OTF/Subset)               | SourceHanSans`CN,JP,KR,HK,TW`-VF.otf       | 5 (region)                |
+| [OTF / HW](Variable/OTF/HW)                       | SourceHanSansHW`SC,_,K,HC,TC`-VF.otf       | 5 (lang)                  |
+| -----------------                                 | ----------                                 | -------                   |
+| [TTF](Variable/TTF)                               | SourceHanSans`SC,_,K,HC,TC`-VF.ttf         | 5 (lang)                  |
+| [TTF / Subset](Variable/TTF/Subset)               | SourceHanSans`CN,JP,KR,HK,TW`-VF.ttf       | 5 (region)                |
+| [TTF / HW](Variable/TTF/HW)                       | SourceHanSansHW`SC,_,K,HC,TC`-VF.ttf       | 5 (lang)                  |
+| -----------------                                 | ----------                                 | -------                   |
+| [WOFF2 / OTF](Variable/WOFF2/OTF)                 | SourceHanSans`SC,_,K,HC,TC`-VF.otf.woff2   | 5 (lang)                  |
+| [WOFF2 / OTF / Subset](Variable/WOFF2/OTF/Subset) | SourceHanSans`CN,JP,KR,HK,TW`-VF.otf.woff2 | 5 (region)                |
+| [WOFF2 / OTF / HW](Variable/WOFF2/OTF/HW)         | SourceHanSansHW`SC,_,K,HC,TC`-VF.otf.woff2 | 5 (lang)                  |
+| -----------------                                 | ------------------------------------------ | -------                   |
+| [WOFF2 / TTF](Variable/WOFF2/TTF)                 | SourceHanSans`SC,_,K,HC,TC`-VF.ttf.woff2   | 5 (lang)                  |
+| [WOFF2 / TTF / Subset](Variable/WOFF2/TTF/Subset) | SourceHanSans`CN,JP,KR,HK,TW`-VF.ttf.woff2 | 5 (region)                |
+| [WOFF2 / TTF / HW](Variable/WOFF2/TTF/HW)         | SourceHanSansHW`SC,_,K,HC,TC`-VF.ttf.woff2 | 5 (lang)                  |
+
+1. There is no half-width subset (region) font.
+2. The OTF-VF is based on CFF2 table. It will not work in the software is not well-supported, and in that case use these font may cause problems. Therefore, you may choose the TTF-VF for better compatibility (especially for Microsoft Office). 
+
+
+
+# Font Name Guide
+
+The font names of Source Han Sans series are basically composed of the fellow parts separated by spaces:
+
+`<basename> [VF] <weight>`
+
+e.g. `Source Han Sans HW CN VF Regular` 
+
+1. Basename
+
+   | Version            | Adobe ver.                                              | Google ver.                                               |
+   | ------------------ | ------------------------------------------------------- | --------------------------------------------------------- |
+   | Region specific    | Source Han Sans <`CN` \| `JP` \| `KR` \| `HK` \| `TW`>  | Noto Sans <`SC` \| `JP` \| `KR` \| `HK` \| `TC`>          |
+   | Language specific  | Source Han Sans <`SC` \| ` ` \| `K` \| `HC` \| `TC`>    | Noto Sans CJK <`SC` \| `JP` \| `KR` \| `HK` \| `TC`>      |
+   | Half-width / Mono* | Source Han Sans HW <`SC` \| ` ` \| `K` \| `HC` \| `TC`> | Noto Sans Mono CJK <`SC` \| `JP` \| `KR` \| `HK` \| `TC`> |
+
+   > Replacing “Sans” with “Serif” yields the naming convention for Source Han Serif (*however, serif is not apply to half-width variant*\*).
+   >
+   > \* The half-width variant has half em width for ASCII characters and some symbols. This variant is available only in the language-specific fonts.
+   >
+   > \** On operating systems set to a specific language, the localized names of the font can be used as a substitute for word “Source Han Sans”. For example, both “**<span style='color:#E86C00;'>源ノ等幅</span>** Regular” (**<span style='color:#E86C00;'>Source Han Sans HW</span>** Regular) and “**<span style='color:#0096ED;'>思源黑体</span>** HW VF” (**<span style='color:#0096ED;'>Source Han Sans</span>** HW **<span style='color:#0096ED;'>SC</span>** VF) are valid names. Google noto version has no localized names.
+
+2. `VF` (variable font) marker indicates it is a variable font in Adobe’s Source Han naming pattern. Left this part empty if it is not a variable format. *Google noto version doesn’t use font name to differentiate between the variable (VF) and static (non-VF) formats.*
+
+3. Weight
+
+   | Sans serif weight | Adobe ver. | Google ver. |
+   | ----------------- | ---------- | ----------- |
+   | 250/100*          | ExtraLight | Thin        |
+   | 300               | Light      | Light       |
+   | 350               | Normal     | DemiLight   |
+   | 400               | Regular    | Regular     |
+   | 500               | Medium     | Medium      |
+   | 700               | Bold       | Bold        |
+   | 900               | Heavy      | Black       |
+
+   | Serif weight | Adobe & Google ver. |
+   | ------------ | ------------------- |
+   | 250/200**    | ExtraLight          |
+   | 300          | Light               |
+   | 400          | Regular             |
+   | 500          | Medium              |
+   | 600          | SemiBold            |
+   | 700          | Bold                |
+   | 900          | Heavy               |
+
+   | HW/Mono weight   | Adobe & Google ver. |
+   | ---------------- | ------------------- |
+   | 400              | Regular             |
+   | 500 (only in VF) | Medium              |
+   | 700              | Bold                |
+
+   >   \* There is only numerical different between Adobe version’s *ExtraLight* (250) and Google version’s *Thin* (100). Their actual effects are identical. For variable font `wght` axis, the values between $[250,300]$ and $[100,300]$ are linearly mapped.
+   >
+   >   \** There is only numerical different between Adobe version (250) and Google version (200). Their actual effects are identical. For variable font `wght` axis, the values between $[250,300]$ and $[200,300]$ are linearly mapped.
+
+---
+
+
+
 # Downloading Source Han Sans
 
 Source Han Sans is an open source Pan-CJK typeface whose OpenType/CFF fonts and CID-based sources are covered under the terms of the [SIL Open Font License, Version 1.1](http://scripts.sil.org/OFL) (also see the [LICENSE](LICENSE.txt) and [FAQ](http://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web)). Here you will find the ready-to-install OpenType/CFF font resources, as individual font resources or grouped together in downloadable ZIP files. The fonts' CID-based sources and build instructions are available in the [repository's `main` branch](https://github.com/adobe-fonts/source-han-sans/). 
